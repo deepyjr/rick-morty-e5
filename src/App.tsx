@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import RickAndMortyPage from './pages/RickAndMortyPage';
+import RickAndMortyPage from './pages/Episode';
 import {
   createBrowserRouter,
   createRoutesFromElements,
