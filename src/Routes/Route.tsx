@@ -1,9 +1,9 @@
 import {  Routes, Route } from "react-router-dom";
 import Root from "../Root";
-import Character from "../pages/Character";
+import Character from "../pages/CharacterPage";
 import CharacterDetail from "../components/CharacterDetail";
-import Episode from "../pages/Episode";
-import Location from "../pages/Location";
+import Episode from "../pages/EpisodePage";
+import Location from "../pages/LocationPage";
 
 const AppRoutes = () => {
   return (

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Location() {
+function LocationPage() {
   return (
     <div>Location</div>
   )
 }
 
-export default Location
+export default LocationPage

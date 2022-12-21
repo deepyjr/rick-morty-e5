@@ -1,16 +1,22 @@
 import React from 'react'
 import './Cards.css'
-function Card() {
+import { Character } from '../../api/characters'
+
+interface Props {
+  content: Character;
+}
+
+const Card: React.FC<Props> = ({ content }) => {
   return (
     <div className="container-card">
         <div className="img-card">
-            <img src="https://picsum.photos/250/200" alt="" />
+            <img src={content.image} alt="" />
         </div>
-        <h3>Rick Sanchez</h3>
+        <h3>{content.name}</h3>
         <p>Specie : Human</p>
         <p>Last location  : Citadel of Ricks</p>
     </div>
   )
-}
+};
 
-export default Card
+export default Card;

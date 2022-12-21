@@ -1,9 +1,9 @@
 import React, { useMemo, useState } from "react";
 import Card from "../components/Cards";
-import "./Episode.css";
+import "./Pages.css";
 import { getCharacters, Character } from "../api/characters";
-import Characters from "../components/Characters";
-function Episode() {
+
+function CharacterPage() {
   const [result, setResult] = useState<Character[] | null>(null);
 
   useMemo(async () => {
@@ -15,7 +15,7 @@ function Episode() {
     <div className="container">
       <div className="container-cards">
         {result?.map((el, index) => {
-          return <Characters character={el} key={index} />;
+          return <Card content={el} key={index} />;
         })}
       </div>
       <p>Episode</p>
@@ -23,4 +23,4 @@ function Episode() {
   );
 }
 
-export default Episode;
+export default CharacterPage;
