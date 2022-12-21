@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from '../components/Cards';
-import './RickAndMortyPage.css'
-function RickAndMortyPage() {
+import './Episode.css'
+function Episode() {
   return (
     <>
       <div className="container">
@@ -12,9 +12,9 @@ function RickAndMortyPage() {
           <Card></Card>
         </div>
       </div>
-      <p>RickAndMortyPage</p>
+      <p>Episode</p>
     </>
   );
 }
 
-export default RickAndMortyPage
+export default Episode

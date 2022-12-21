@@ -1,40 +1,35 @@
 import React, { useCallback, useState } from "react";
 import "./App.css";
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Characters from "./components/Characters";
+import Character from "./pages/Character";
 import CharacterDetail from "./components/CharacterDetail";
-import Episodes from "./components/Episodes";
-import Locations from "./components/Locations";
+import Episode from "./pages/Episode";
+import Location from "./pages/Location";
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false);
-  
-  const handleDarkMode = useCallback(() => {
-    setDarkMode((prev) =>  !prev)
-  }, [])
 
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <Route path="/">
-        <Header darkMode={darkMode} toggleDarkMode={handleDarkMode} />
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/characters/:id" element={<CharacterDetail />} />
-        <Route path="/episodes" element={<Episodes />} />
-        <Route path="/locations" element={<Locations />} />
-      </Route>
-    )
-  );
+  const handleDarkMode = useCallback(() => {
+    setDarkMode((prev) => !prev);
+  }, []);
 
   return (
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Header darkMode={darkMode} toggleDarkMode={handleDarkMode} />
+          }
+        >
+          <Route path="/characters" element={<Character />} />
+          <Route path="/characters/:id" element={<CharacterDetail />} />
+          <Route path="/episodes" element={<Episode />} />
+          <Route path="/locations" element={<Location />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
