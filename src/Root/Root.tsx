@@ -11,8 +11,10 @@ const Root = () => {
 
   return (
     <React.StrictMode>
-      <Header darkMode={darkMode} toggleDarkMode={handleDarkMode} />
-      <Outlet />
+      <div className="App">
+        <Header darkMode={darkMode} toggleDarkMode={handleDarkMode} />
+        <Outlet />
+      </div>
     </React.StrictMode>
   );
 };

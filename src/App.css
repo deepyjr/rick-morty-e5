@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  background-color: #0b111e;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {
