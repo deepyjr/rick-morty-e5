@@ -19,10 +19,10 @@ export interface Character {
   created: string;
 }
 
-export const getCharacters = async (): Promise<Character[]> => {
+export const getCharacters = async (pageNumber : string): Promise<Character[]> => {
   try {
-    const response = await axios.get('https://rickandmortyapi.com/api/character');
-    return response.data.results;
+    const response = await axios.get('https://rickandmortyapi.com/api/character?page=' + pageNumber);
+    return response.data;
   } catch (error) {
     console.error(error);
     throw error;

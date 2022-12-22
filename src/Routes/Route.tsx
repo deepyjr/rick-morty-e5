@@ -10,6 +10,7 @@ const AppRoutes = () => {
     <Routes>
       <Route element={<Root />}>
         <Route path="/characters" element={<Character />} />
+        <Route path="/characters/page/:pageParam" element={<Character />} />
         <Route path="/characters/:id" element={<CharacterDetail />} />
         <Route path="/episodes" element={<Episode />} />
         <Route path="/locations" element={<Location />} />

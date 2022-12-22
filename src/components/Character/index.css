@@ -37,3 +37,15 @@ select {
 select:after {
     background-color: aqua;
 }
+
+.pagination__btn {
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
