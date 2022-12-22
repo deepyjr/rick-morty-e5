@@ -9,6 +9,11 @@
     text-align: left;
     margin: 50px
 }
+
+.container-card:hover {
+    cursor: pointer;
+}
+
 img{
     border-radius: 5px;
     max-width: 100%;

@@ -5,7 +5,7 @@ function EpisodePage() {
   return (
     <div className="container">
       <div className="container-cards">
-        <Episodes id={1}/>
+        <Episodes />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import {  Routes, Route } from "react-router-dom";
 import Root from "../Root";
 import Character from "../pages/CharacterPage";
-import CharacterDetail from "../components/CharacterDetail";
+import CharacterDetail from "../pages/CharacterDetails";
 import Episode from "../pages/EpisodePage";
 import Location from "../pages/LocationPage";
 
