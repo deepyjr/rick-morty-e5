@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Character } from "../../api/characters";
 import {
   Location,
@@ -7,6 +7,7 @@ import {
 } from "../../api/locations";
 import withData from "../../hoc/withData";
 import Card from "../Cards";
+import { PreferenceContext } from "../../Contexts/preferenceContext";
 
 type Props = {
   data: any;
@@ -15,6 +16,7 @@ type Props = {
 };
 
 const Locations: React.FC<Props> = ({ data, loading, error }) => {
+  const { state } = useContext(PreferenceContext);
   const [id, setId] = useState("1");
   const [character, setCharacter] = useState<Character[] | null>(null);
   useEffect(() => {
@@ -58,6 +60,13 @@ const Locations: React.FC<Props> = ({ data, loading, error }) => {
           character.map((el: Character, index: number) => {
             return <Card content={el} key={index} />;
           })}
+        {character && character.length === 0 && (
+          <h1
+            style={{ color: state.theme === "light" ? "#5b5757" : "#d1c7c8" }}
+          >
+            No Character Found
+          </h1>
+        )}
       </div>
     </div>
   );

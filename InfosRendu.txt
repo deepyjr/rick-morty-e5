@@ -1,0 +1,20 @@
+Rendu projet front avancé
+
+
+Détails :
+-	Tous les points de la consigne ont été réalisés et vérifiés un par un
+-	Plusieurs aspects du cours ont été implémentés dans la construction de l’application (Le High Order Component, le Context, le useEffect, etc.)
+-	L’application est parfaitement fonctionnelle et sans bug à priori
+-	Aucune librairie de style n’a été utilisée, ni aucune librairie fonctionnelle en dehors d’axios pour effectuer des requêtes. Tous les composants de filtres, paginations, et autres ont été faits à la main.
+
+On a modifié au maximum notre façon de coder pour intégrer les éléments vus en cours.
+Le plus compliqué aura été le HOC, on a le sentiment qu'il aurait pu être utilisé encore mieux que ça, mais nous en sommes restés à une version fonctionnelle et qui selon nous remplit le rôle de HOC.
+
+Merci pour le cours, et bonne correction !
+
+Groupe :
+
+William HERBIN
+Gabriel MILLET
+Florian GILLET
+Raphaël DA FONSECA
