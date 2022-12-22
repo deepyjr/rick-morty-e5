@@ -31,12 +31,23 @@ export const getLocationById = async (id: number): Promise<Location> => {
   }
 };
 
-export const getCharactersByLocationId = async (id: number): Promise<Character[]> => {
-    try {
-      const response = await axios.get(`https://rickandmortyapi.com/api/location/${id}/character`);
-      return response.data.results;
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
-  };
+export const getCharactersDataByLocationId = async (
+  id: string
+): Promise<Character[]> => {
+  try {
+    const locationData = await axios.get(
+      "https://rickandmortyapi.com/api/location/" + id
+    );
+    return new Promise((resolve) => {
+      return resolve(
+        locationData.data.residents.map(async (singleUrl: string) => {
+          const response = await axios.get(singleUrl);
+          return response.data;
+        })
+      );
+    });
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};

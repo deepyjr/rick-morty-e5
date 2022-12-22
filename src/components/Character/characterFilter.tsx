@@ -36,7 +36,6 @@ const CharacterFilter: React.FC<Props> = ({
       </div>
       <div className="fieldSelector">
         <div>
-          <p>Status</p>
           <select
             id="status-select"
             value={statusFilter}

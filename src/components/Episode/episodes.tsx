@@ -40,7 +40,6 @@ const Episodes: React.FC<Props> = ({ data, loading, error }) => {
   return (
     <div className="container">
       <div>
-        <p>Status</p>
         <select
           id="status-select"
           value={id}
