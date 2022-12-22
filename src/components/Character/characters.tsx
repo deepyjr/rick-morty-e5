@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Character, getCharacters } from "../../api/characters";
 import withData from "../../hoc/withData";
 import Card from "../Cards";
 import CharacterFilter from "./characterFilter";
+import { PreferenceContext } from "../../Contexts/preferenceContext";
 
 type Props = {
   data: any;
@@ -13,6 +14,7 @@ type Props = {
 let page: string;
 
 const Characters: React.FC<Props> = ({ data, loading, error }) => {
+  const { state } = useContext(PreferenceContext);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [genderFilter, setGenderFilter] = useState("");
@@ -66,11 +68,18 @@ const Characters: React.FC<Props> = ({ data, loading, error }) => {
           filteredCharacters.map((el: any, index: number) => {
             return <Card content={el} key={index} />;
           })}
+        {filteredCharacters.length === 0 && (
+          <h1
+            style={{ color: state.theme === "light" ? "#5b5757" : "#d1c7c8" }}
+          >
+            No Character Found
+          </h1>
+        )}
       </div>
       <div className="pagination">
         {pageButtons.map((pageNumber) => {
           if (
-            Math.abs(pageNumber - parseInt(page)) > 4 &&
+            Math.abs(pageNumber - parseInt(page)) > 3 &&
             pageNumber !== 1 &&
             pageNumber !== pageButtons.length
           )

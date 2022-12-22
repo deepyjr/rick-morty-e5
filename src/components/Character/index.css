@@ -42,10 +42,12 @@ select:after {
     width: 100px;
     height: 100px;
     font-size: 60px;
+    border: 1px solid
 }
 
 .pagination {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 100px 0
 }

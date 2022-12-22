@@ -1,6 +1,4 @@
 .container-card{
-    color: #d1c7c8;
-    background-color: #151c28;
     max-height: 100%;
     max-width: 250px;
     min-width: 250px;
@@ -17,4 +15,14 @@
 img{
     border-radius: 5px;
     max-width: 100%;
+}
+
+.dark {
+    background-color: #0b111e;
+    color: #d1c7c8
+}
+
+.light {
+    background-color: #fafcff;
+    color: #5b5757;
 }

@@ -1,24 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.css";
+import { PreferenceContext } from "../../Contexts/preferenceContext";
 
-interface Props {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
 
-const Header: React.FC<Props> = (props) => {
-  const { darkMode, toggleDarkMode } = props;
+
+const Header: React.FC = (props) => {
+  const { state, dispatch } = useContext(PreferenceContext);
 
   return (
     <header>
-      <h1>Rick & Morty</h1>
-      <div className="nav">
+      <h1 className={state.theme}>Rick & Morty</h1>
+      <div className={"nav " + state.theme}>
         <NavLink to="/characters">Characters</NavLink>
         <NavLink to="/episodes">Episodes</NavLink>
         <NavLink to="/locations">Locations</NavLink>
-        <button onClick={toggleDarkMode}>
-          {darkMode ? "Light Mode" : "Dark Mode"}
+        <button
+          onClick={() => {
+            dispatch({ type: state.theme === "dark" ? "LIGHT" : "DARK" });
+          }}
+        >
+          {state.theme === "dark" ? "Light Mode" : "Dark Mode"}
         </button>
       </div>
     </header>

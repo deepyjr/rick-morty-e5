@@ -38,7 +38,7 @@ const Locations: React.FC<Props> = ({ data, loading, error }) => {
 
   return (
     <div className="container">
-      <div>
+      <div style={{ margin: "100px 0" }}>
         <select
           id="status-select"
           value={id}
