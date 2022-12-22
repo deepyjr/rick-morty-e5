@@ -17,13 +17,14 @@ type Props = {
 const Episodes: React.FC<Props> = ({ data, loading, error }) => {
   const [id, setId] = useState("1");
   const [character, setCharacter] = useState<Character[] | null>(null);
-  
-  
+
   useEffect(() => {
     const fetchEpisodeData = async () => {
-      getCharactersDataByEpisodeId("1").then((res) => setCharacter(res))
-    }
-    fetchEpisodeData()
+      // attendre que la promesse soit résolue avant d'accéder à ses propriétés
+      const result = await getCharactersDataByEpisodeId(id);
+      Promise.all(result).then((res) => setCharacter(res));
+    };
+    fetchEpisodeData();
   }, [id]);
 
   if (error) {
@@ -57,7 +58,6 @@ const Episodes: React.FC<Props> = ({ data, loading, error }) => {
       <div className="container-cards">
         {character &&
           character.map((el: Character, index: number) => {
-            console.log(el);
             return <Card content={el} key={index} />;
           })}
       </div>

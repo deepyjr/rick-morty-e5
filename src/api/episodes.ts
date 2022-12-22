@@ -39,13 +39,17 @@ export const getCharactersDataByEpisodeId = async (
   id: string
 ): Promise<Character[]> => {
   try {
-    const episodeData = await axios.get("https://rickandmortyapi.com/api/episode/" + id);
-    let results: Character[] = [];
-    episodeData.data.characters.forEach(async (singleUrl: string) => {
-      const response = await axios.get(singleUrl);
-      results.push(response.data);
+    const episodeData = await axios.get(
+      "https://rickandmortyapi.com/api/episode/" + id
+    );
+    return new Promise((resolve) => {
+      return resolve(
+        episodeData.data.characters.map(async (singleUrl: string) => {
+          const response = await axios.get(singleUrl);
+          return response.data;
+        })
+      );
     });
-    return results;
   } catch (error) {
     console.log(error);
     throw error;
