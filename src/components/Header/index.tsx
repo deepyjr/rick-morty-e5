@@ -1,5 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./index.css";
 
 interface Props {
   darkMode: boolean;
@@ -12,12 +13,14 @@ const Header: React.FC<Props> = (props) => {
   return (
     <header>
       <h1>Rick & Morty</h1>
-      <nav>
+      <div className="nav">
         <NavLink to="/characters">Characters</NavLink>
         <NavLink to="/episodes">Episodes</NavLink>
         <NavLink to="/locations">Locations</NavLink>
-      </nav>
-      <button onClick={toggleDarkMode}>{darkMode ? 'Light Mode' : 'Dark Mode'}</button>
+        <button onClick={toggleDarkMode}>
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </div>
     </header>
   );
 };

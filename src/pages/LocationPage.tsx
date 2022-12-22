@@ -1,9 +1,14 @@
-import React from 'react'
+import "./Pages.css";
+import Locations from "../components/Location/locations";
 
 function LocationPage() {
   return (
-    <div>Location</div>
-  )
+    <div className="container">
+      <div className="container-cards">
+        <Locations />
+      </div>
+    </div>
+  );
 }
 
-export default LocationPage
+export default LocationPage;
